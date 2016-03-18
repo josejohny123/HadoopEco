@@ -10,6 +10,9 @@ import org.apache.hadoop.mapreduce.lib.input.MultipleInputs;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
 import org.apache.hadoop.util.Tool;
+import org.apache.hadoop.util.ToolRunner;
+
+import trg.hadoop.invagg.dc.InvDC;
 
 public class InvRSJ extends Configured implements Tool{
 
@@ -39,4 +42,9 @@ public class InvRSJ extends Configured implements Tool{
 		
 		return job.waitForCompletion(true) ? 0 : 1;
      }
+	
+	public static void main(String[] args) throws Exception {
+		int exitCode = ToolRunner.run(new InvRSJ(), args);
+		System.exit(exitCode);
+	}
 }

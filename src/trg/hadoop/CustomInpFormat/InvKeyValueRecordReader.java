@@ -70,6 +70,8 @@ public class InvKeyValueRecordReader extends RecordReader<InvKeyWritable, InvVal
 		key = new InvKeyWritable();
 		key.set(prodid, whid);
 		
+		
+		
 		return true;
 	}
 	
